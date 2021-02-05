@@ -1,0 +1,696 @@
+checksum  // to verify software downloaded is free from malware or not
+rhash --sha1 xampp[Press Tab].exe
+verify checksum
+
+// if apache server is not working check for the port and change it to 8080 or 4330 because https uses port 80/443 for secure network.
+
+//to override the cache memory
+press F12 in the browser to open debugger
+open a website
+notice the 200 ok status
+press F5
+notice the 301 (not motified) statuses
+press ctrl-F5 to override the cache memory of your browser
+notice the 200 ok status
+
+----------------------------------------------
+class 3
+
+Search for any problem in this manner for any language
+1) official Documentation (php.net )
+2) fixed websites (eg: w3schools)
+3) blog (stackoverflow, etc)
+
+
+How to Handle international users:
+1) your document must be saved in UTF-8
+2) send network headers before the Data <!Doctype html>
+3) <meta ....UTF-8 in HTML
+
+It is easy to add html attribute outside echo so it is easy to compile and see the presentation properly. It is going to work any how but this is more proper.
+
+Declaring a variable
+-variable name starts with $
+eg $name = "JF";
+-variable name must start with a letter or the underscore character
+-variable name cannot start with a number
+-variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+-variable names are case-sensitive ($age and $AGE are two different variables)
+
+calling a variable
+-there are many ways to do it
+echo "my name is $name"  #when using double-quote variables values are fetched
+echo 'my name is $name'  Important note: #when using single-quote variables values are not fetched. it Displays as it is.
+echo "my name is"
+
+use escape character to use special characters.
+eg to print my name is "JF".
+echo "my name is \"$name\"" or echo "my name is \" " . $name . " .";
+
+use mb_strlen($name) to see the real length of the string because if we use Montréal strlen($name) will show output 9. but mb_strlen($name) will give output as 8. which is true? 
+why?
+It is because é uses 2 bytes while other caracter uses 1 byte because of UTF-8.
+
+How to access é or similar characters on keyboard?
+press alt + 130 for é
+similarly alt + 155 for ¢
+you can find other characters by changing the ascii value of character
+
+$city = 'Montréal';
+	---exp -1---
+	#find the n letter in the city name
+$position = strpos($city, "n");
+echo "the position for n letter is: $position";
+	---exp -2---
+$position = strpos($city, "z)";
+echo "the position for n letter is: $position";
+
+
+var_dump($position); # to print boolean values in case of no result. easier to read data. tells everything about variables
+print_r($position); #print the human readble info about the variable
+gettype($position); #print the type of variable
+
+
+Debugging Techniques
+echo "DEBUG : " gettype(variable); 
+var_dump($variable);
+------------------------------------------------
+class 4
+
+
+rounding number down in differnt ways
+echo (int)22.21313 #22
+echo floor(22.21313) #22
+			
+round with floating point
+round(22.21313, 3) #22.213
+
+
+---------
+
+$names = array("bill", "yash", "rahul"); #create an array
+#use var_dump to print elements of array. echo will not work directly. we need to pass position of array element as parameter in echo using [] brackets.
+$string = json_encode($names); #converts array to string
+$array = json_decode($string); #convets string to array
+
+---------
+
+$names = array("Microsoft" => "bill gates","college" => "yash","srkay" => "rahul"); #create an associative array
+echo $names["Microsoft"] #output---> "bill gates"
+#if we use number for associative array it will not work
+
+---------
+
+$names = array("bill", "yash", "rahul");
+#using loop print names
+for($index = 0 ; $index < count($names) ; $index++) 
+{
+	echo "<br> " . $names[$index];
+}
+
+or
+
+foreach($names as $values) 
+{
+	echo "<br> " . $values;
+}
+
+---------
+
+#for associative arrays
+$names = array("Microsoft" => "bill gates","college" => "yash","srkay" => "rahul");
+foreach($names as $key => $values) 
+{
+	echo "<br> ". $key. "  " . $values;
+}
+
+---------
+
+$names = array("bill", "yash", "rahul");
+sort($names); #for sorting alphabatically A to Z
+rsort($names); #for sorting in reverse order from Z to A
+#using loop print names
+for($index = 0 ; $index < count($names) ; $index++) 
+{
+	echo "<br> " . $names[$index];
+}
+
+https://www.php.net/manual/en/array.sorting.php #check link for differnt kind of sorting technique and sorts.
+
+
+---------------------------------------------------
+class 5
+
+-strlen() function returns the length of a string
+-strpos() function searches for a specific text within a string. If a match is found, the function returns the character position of the first match. If no match is found, it will return FALSE
+-str_replace() function replaces some characters with some other characters in a string
+
+
+-To create a constant, use the define() function.
+syntax:
+define(name, value, case-insensitive)
+
+
+--------
+Functions:
+
+A user-defined function declaration starts with the word function :-
+Syntax:
+function functionName() {
+  code to be executed;
+}
+
+-A function is a block of statements that can be used repeatedly in a program.
+-A function will not execute automatically when a page loads.
+-A function will be executed by a call to the function.
+
+--------
+
+
+explode is used to split array
+implode is used to join array
+
+or to convert a char in string in its int value
+chr vice verse
+
+
+cast and set type are similar in functionality
+
+----------------------------------------------------
+class 6
+
+superglobals $_GET and $_POST are used to collect form-data
+$_GET is an array of variables passed to the current script via the URL parameters.
+$_POST is an array of variables passed to the current script via the HTTP POST method.
+
+
+Information sent from a form with the GET method is visible to everyone.
+
+Information sent from a form with the POST method is invisible to others (all names/values are embedded within the body of the HTTP request) and has no limits on the amount of information to send.
+
+the Form code looks like this
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+
+- $_SERVER["PHP_SELF"] is a super global variable that returns the filename of the currently executing script
+
+How To Avoid $_SERVER["PHP_SELF"] Exploits?????
+- use of htmlspecialchars() function
+
+----------------------------------------------------
+class 7
+
+Installing Subversion
+Download subversion from https://www.visualsvn.com/downloads/
+
+Download the zip file and go into the zip.select bin folder
+copy all items from bin and store it in new folder : BinarySubversion
+
+Add path in enviroment varibles of the subversion binaries.
+
+go to cmd from same path.
+go to the new folder BinarySubversionApache where we have extracted the bin files
+type command svnadmin create c\Users\_yash\Subversion-repo-2014107 of the db you want to create
+
+eg.. svnadmin create c:\Users\_yash\Subversion-repo-2014107
+
+to create backup svnadmin dump c:\Users\_yash\Subversion-repo-2014107 > subversion-backup-2014107
+
+to load final database svnadmin load c:\Users\_yash\Subversion-new-repo-2014107 < subversion-backup-2014107
+
+give the path of the Subversion-repo-2014107 to apache for Version control system of project.
+
+------------
+File handling
+
+
+-To open and read data from file:-
+<?php
+$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+echo fread($myfile,filesize("webdictionary.txt"));
+fclose($myfile);
+?>
+
+
+-The feof() function checks if the "end-of-file" (EOF) has been reached.
+
+-The feof() function is useful for looping through data of unknown length.
+
+-The example below reads the "webdictionary.txt" file line by line, until end-of-file is reached:
+<?php
+$myfile = fopen("webdictionary.txt", "r") or die("Unable to open file!");
+// Output one line until end-of-file
+while(!feof($myfile)) {
+  echo fgets($myfile) . "<br>";
+}
+fclose($myfile);
+?>
+
+---------
+error handlers
+
+error_reporting(0);
+set_error_handler("errorMsg");
+set_exception_handler("ExceptionMsg");
+
+function errorMsg($errorNum, $errorString, $errorfile, $errorline, $errorconn) {
+    $debug = true;
+
+    if ($debug) {
+        echo "<br>Error Level: " . $errorNum;
+        echo "<br>Error : " . $errorString;
+        echo "<br>File Name : " . $errorfile;
+        echo "<br>File Line : " . $errorline;
+        echo "<br>Error Code: " . $errorconn;
+        echo "<br>Browser: " . json_encode(get_browser($HTTP_USER_AGENT));
+        echo "<br>Date: " . date('Y-m-d H:i:s.u');
+    }
+
+    die("<br>");
+}
+
+function ExceptionMsg($exception) {
+    $debug = true;
+
+    if ($debug) {
+        echo "<br>Error Level: " . $exception->getLevel();
+        echo "<br>Error : " . $exception->getMessage();
+        echo "<br>File Name : " . $exception->getFile();
+        echo "<br>File Line : " . $exception->getLine();
+        echo "<br>Error Code: " . $exception->getCode();
+        echo "<br>Browser: " . json_encode(get_browser($HTTP_USER_AGENT));
+        echo "<br>Date: " . date('Y-m-d H:i:s.u');
+    }
+
+    die("<br>");
+}
+
+------------------------------------------------------
+class 8
+
+Cookies
+
+-store info
+-cookies expire after some time
+-stored in the browser (client side)
+
+A cookie is often used to identify a user. A cookie is a small file that the server embeds on the user's computer. Each time the same computer requests a page with a browser, it will send the cookie too.
+
+setcookie(name, value, expire, path, domain, secure, httponly);
+
+
+following code sets and retrieve cookies for user John Doe:
+<?php
+$cookie_name = "user";
+$cookie_value = "John Doe";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+<html>
+<body>
+
+<?php
+if(!isset($_COOKIE[$cookie_name])) {
+  echo "Cookie named '" . $cookie_name . "' is not set!";
+} else {
+  echo "Cookie '" . $cookie_name . "' is set!<br>";
+  echo "Value is: " . $_COOKIE[$cookie_name];
+}
+?>
+
+</body>
+</html>
+
+
+-----------
+Session variables:
+-store info
+-expire when you close the browser
+-stored on the server (server-side)
+
+A session is started with the session_start() function.
+
+Session variables are set with the PHP global variable: $_SESSION.
+
+
+-To show all the session variable values for a user session is to run the following code:
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+print_r($_SESSION);
+?>
+
+</body>
+</html>
+
+--------------------------------------------------------
+class 9
+creating certificate
+
+Download and install cygwin from official website
+
+open cmd and go to the following path:
+
+- cd c:\cygwin64
+
+creating certificate and private key
+
+- openssl req -nodes -x509 -newkey rsa:4096 -keyout 2014107.key -out 2014107.crt
+
+if not working
+openssl
+
+- openssl> req -nodes -x509 -newkey rsa:4096 -keyout ys.key -out ys.crt
+
+copy the two files (ys.crt and ys.key) :
+
+c:\xampp\apache\conf\ssl.crt -------> ys.crt
+c:\xampp\apache\conf\ssl.key -------> ys.key
+
+modify httpd-ssl.conf file and modify:
+SSLCertificateFile
+SSLCertificateKeyFile
+
+now restart Apache
+and test https://localhost
+
+
+---------------------------------------------
+class 10
+
+How to  force HTTPS connection:
+
+1) modify https-vhosts.conf\ssl
+	create rewrite rule (3 lines)
+	
+	RewriteEngine On
+	ReWriteCond ....
+	Rewrite Rule ...
+	
+2) .htaccess
+	place this file in your project folder to ...
+	create rewrite rule (3 lines)
+	
+	RewriteEngine On
+	ReWriteCond ....
+	Rewrite Rule ...
+
+3) PHP code
+
+HEAD ------> last version of the code.
+
+htdocs/
+
+MYSQL ----------> MariaDB
+
+to connect to the db service:
+
+1) text based command -----> c:\xampp\mysql\bin\mysql.exe
+	to connect to MariaDB you need : Username , password
+
+2) web-basaed GUI
+
+3) GUI (heidiSQL, MYSQL workbench) 
+
+-----------------
+
+db: web , employees , root(admin)
+-----------------
+to connect manually 
+c:\xampp\mysql\bin\mysql.exe -u root 
+
+select @@version;
+
+exit;
+----------
+permission denied  admin@localhost
+----------
+
+if your password ius empty :
+
+to make your installation more secure:
+c:\xampp\mysql\bin\mysqladmin.exe -u root		STEP 1
+
+-make sql accessible only from localhost
+-PHP my admin password
+-SET MYSQL ROOT PASSWORD ---------> 123   --------> Most imp step STEP 2
+-SET ProFTP user password
+
+-------------
+c:\xampp\mysql\bin\mysqladmin.exe -u root -p 	STEP 3
+password: 123									STEP 4
+
+select @@version;								STEP 5
+exit;
+
+--------------
+
+how to modify an Existing password
+
+c:\xampp\mysql\bin\mysql.exe -u root -p
+
+password: root
+
+use mysql;									
+
+update user set password = PASSWORD('new_password') where user='root';
+
+ALTER USER 'root'@'localhost'
+
+flush privilages;
+---------------
+
+root is the administrator      1234            connection string
+MariaDB port is 3306
+
+pdadmin4
+DBeaver
+SQuirrel SQL
+MySQL workbench
+Sequel Pro
+
+
+---------
+
+SQL server
+
+1) sa (root) password not set
+
+2) collection settings
+
+SELECT *
+FROM customers
+ORDER BY lastname
+
+WHERE lastname like 'bB%'
+
+burnaby
+Butter
+
+SQL server collection setting : case sensitive
+Aubut
+burnaby
+Smith
+Tetrault
+
+a) backup (binary)
+
+b) export to SQL (text based)
+
+SQL 2012
+SQL 2016	text based
+SQL 2017
+
+------------------------------------------------
+class 11
+
+naming tables:
+0-9
+a-z
+A-Z
+$
+_
+
+---------
+table and fields names: recommended to use lowercase only (with underscore)
+
+--------------
+company 1
+customers
+
+PK
+1	bob		smith	Montéal		engineer
+2	bob		smith	Québec		developer
+
+--------------
+
+company 2
+customers
+
+PK
+1	Yash Shah
+2	Rahul Pipaliya
+
+---------------
+
+invoices
+1	november 4		1
+
+it's hard to recognize which customer we are referring to so we need to use UUID (universal unique identifier)
+
+UUID is 36 characters
+
+CHAR
+VARCHAR
+VAR means variable
+
+firstname CHAR(10)
+'bob          '
+'julia        '
+
+VARCHAR(10)
+'bob'
+'julia'
+
+VARCHAR is used when there is user input. CHAR always stores total length even if we use 4 characters it stores 10 characters.
+
+
+Apache (most popular web server)
+
+MySQL (most popular)  UUID()
+PostgreSQL
+
+----------
+
+MariaDB data types:
+
+Strings:
+
+CHAR(36) : fixed (UUID)
+VARCHAR(20) : user entry
+
+Numbers:
+
+Do i need decimals? (question you need to ask yourself)
+
+if no , choose correct Integer data type
+
+if yes, use DECIMAL()
+
+DECIMAL(5,2)
+
+maximum amount: 999.99
+INT
+
+quantity
+maximum amount: 50000.9
+number of decimal: 1
+
+DATETIME	NOW()
+DATE
+TIME
+
+BIT(1) : to keep true/false, or 1/0
+
+BLOB (Binary Large Object)
+
+-----------
+
+let take an example
+
+ID	Firstname	AGE		Job
+1	bob			20		janitor
+2	jim			30		director
+3	sophia		40		accountant
+4	rahul		21		accountant
+
+SELECT *
+FROM employees
+WHERE job = 'accountant'
+
+SORT BY xyz
+
+INDEX Job field
+janitor		1
+director	2
+accountant	3,4
+
+SELECT *
+FROM a
+INNER JOIN b on a.field = b.field
+
+NIGHTLY TASKS: rebuild indexes
+
+WHERE
+SORT BY
+FOREIGN KEYS
+
+Make sure the code is bulletproof from sql injection
+Use stored procedures and views and give privilages to the user for only stored procedures and views.
+Hackers might inject ' OR 1=1;# to hack into the database.
+
+------------------------------------------------
+class 12
+
+3 was of connecting sql using oop in php
+1) PDO (PHP Data Objects) (recommended) because error handling is better
+2) MySQLi (Object Oriented)
+3) MySQLi (Procedural)
+
+3rd Place Sql Statements:
+"SELECT * FROM mytable ...." . $variable . " .... AND password = '$password'"
+
+vulnerable to SQL injection
+
+2nd Place (don't use this in final project)
+"SELECT * FROM mytable...WHERE password = :p_password"
+
+1st Place, Stored Procedures:
+"CALL insert_employee(:p_password)";
+
+-------------------------------------
+Class 15
+
+singular/plural classes
+-------
+Singular:
+getter / setter 
+Insert/ Update/ Select/ Delete (load(), save(), delete())
+
+-------
+plural:
+inheritance (for the collection)
+
+Constructor that loads automatically all the data
+--------------------------------------
+Class 16
+
+AJAX = Asynchronous JavaScript and XML.
+
+AJAX is a technique for creating fast and dynamic web pages.
+
+AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.
+
+Classic web pages, (which do not use AJAX) must reload the entire page if the content should change.
+
+Examples of applications using AJAX: Google Maps, Gmail, Youtube, and Facebook tabs.
+
+AJAX is based on internet standards, and uses a combination of:
+
+XMLHttpRequest object (to exchange data asynchronously with a server)
+JavaScript/DOM (to display/interact with the information)
+CSS (to style the data)
+XML (often used as the format for transferring data)
+--------
+First, check if the input field is empty (str.length == 0). If it is, clear the content of the txtHint placeholder and exit the function.
+
+However, if the input field is not empty, do the following:
+
+Create an XMLHttpRequest object
+Create the function to be executed when the server response is ready
+Send the request off to a PHP file (gethint.php) on the server
+Notice that q parameter is added to the url (gethint.php?q="+str)
+And the str variable holds the content of the input field

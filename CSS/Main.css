@@ -1,0 +1,371 @@
+/*
+#Revision History
+#DEV                DATE               DESC
+#YASH (2014107)     2020-10-21         Created CSS File and folder.
+#YASH (2014107)     2020-10-21         Created Header and Footer CSS.
+#YASH (2014107)     2020-10-21         Fixed CSS for Header.
+#YASH (2014107)     2020-10-21         Added CSS for Products.
+#YASH (2014107)     2020-10-29         Fixed CSS, Added code for Advertizing.
+#YASH (2014107)     2020-11-27         Fixed CSS, Added code for Login, Register and update user.
+#YASH (2014107)     2020-11-29         Fixed CSS, for other pages.
+#YASH (2014107)     2020-11-29         Fixed CSS, for header and footer.Also added css for media content screen.
+#YASH (2014107)     2020-12-02         Added css for Products page.
+#YASH (2014107)     2020-12-04         Added css for orders page.
+#YASH (2014107)     2020-12-04         Fixed css for media query screen.
+*/
+
+/*css for body*/
+body{
+    background-color: bisque;
+}
+
+/*css for header*/
+#header{
+    min-height: 38px;
+    height: auto;
+    width: 100%;
+}
+
+/*css for footer*/
+#footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 20%;
+}
+
+/*#footer-shop{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 20%;
+}
+
+#index-footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    height: 20%;
+}*/
+
+/*footer css for register page*/
+#register-footer{
+    bottom: 0;
+    position: inherit;
+    width: 100%;
+    height: 20%;
+}
+
+/*css for index page*/
+#logo {
+    height: 38px;
+}
+
+.advertisement{
+    position: fixed;
+    align-self: center;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+.mySlides {
+    display:none;
+    height: 400px; 
+    margin-top: 10px;
+}
+
+h2{
+    text-align: center;
+    color: #ff3465;
+}
+
+double-price-border{
+    border: none;
+}
+
+.advertising{
+    width:100%;
+    height:100%;
+}
+
+#advertise {
+    width: 50%;
+    height: 100%;
+    margin-left: 26%;
+    margin-right: 24%;
+}
+
+.my-slide-border{
+    border: solid red 5px;
+}
+
+.mySlide-pic{
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+}
+
+.price-tag {
+    margin-left: 44.6%;
+    margin-right: 40%;
+    margin-bottom: 5px;
+}
+
+next-previous{
+    position: fixed;
+}
+
+.form{
+    width: 80%;
+}
+
+.data{
+    padding: 0px;
+    width: 30%;
+}
+
+/*css for common forms error message*/
+.error{
+    color: #FF0000;
+    padding: 0px;
+}
+
+/*css for orders tables*/ 
+#t01 {
+    width:100%; 
+    border: 1px solid;
+}
+#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-orange {
+    color: orange;
+}
+
+.color-green {
+    color: green;
+}
+
+.color-print{
+    background-color: white;
+}
+
+img.color-print{
+    opacity: 0.3;
+}
+
+/*css for download cheetsheet*/
+#download{
+    text-decoration: none;
+}
+
+/*css for login logout*/
+#session{
+    float: right;
+}
+#shop {
+    border: 3px solid #f1f1f1;
+    width: 100%;
+    margin: 0 auto;
+    position: inherit;
+}
+
+#shop-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#login {
+    border: 3px solid #f1f1f1;
+    width: 55%;
+    margin: 0 auto;
+    position: inherit;
+}
+
+#login-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#button {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 0px 0 12px 0;
+}
+
+img.avatar {
+    width: 10%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/*all css for media fix*/
+@media screen and (max-width: 300px) {
+    #footer {
+        bottom: 0;
+        position: inherit;
+        width: 100%;
+        height: 20%;
+    }
+
+    #footer-shop {
+        bottom: 0;
+        position: inherit;
+        width: 100%;
+        height: 20%;
+    }
+}
+
+@media screen and (max-width: 190px) {
+    #nav-button {
+        width: 100%;
+    }
+
+    #session{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    #session{
+        float: left;
+    }
+
+    #shop {  
+        width: 100%;
+        line-height: 1.2;
+    }
+
+    #order-placed{
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    #shop {  
+        width: 100%;
+        line-height: 1.2;
+    }
+
+    #order-placed{
+        line-height: 1;
+    }
+
+    #login {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .scroll{
+        overflow-x: scroll;
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 390px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+
+    .mySlides {
+        height: 270px;
+    }
+
+    #footer-shop {
+        bottom: 0;
+
+        width: 100%;
+        height: 20%;
+    }
+
+    #shop {  
+        width: 100%;
+        line-height: 1;
+    }
+
+    #login {
+        width: 90%;
+    }
+
+    #header{
+        height: auto;
+    }
+
+    .advertisement{
+        height: auto;
+        position: fixed;
+        align-self: center;
+    }
+}
